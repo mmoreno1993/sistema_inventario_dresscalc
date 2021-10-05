@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+$router->get('/', 'LoginController@index');
+$router->get('/login', 'LoginController@login');
+$router->get('/registro', 'LoginController@registro');
