@@ -14,4 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 $router->get('/', 'LoginController@index');
 $router->get('/login', 'LoginController@login');
+$router->get('/logout', 'LoginController@logout');
+$router->post('/login', 'LoginController@login');
 $router->get('/registro', 'LoginController@registro');
+$router->get('/main', 'MainController@index');
+$router->get('/balance', 'MainController@balance');
+$router->get('/earn', 'MainController@earn');
+$router->get('/calc', 'MainController@calc');
+$router->get('/inventory', 'MainController@inventory');

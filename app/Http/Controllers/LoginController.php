@@ -10,10 +10,18 @@ class LoginController extends Controller
     }
     function login()
     {
+        if(@$_POST['txtEmail'] != null)
+            return redirect('/main');
+        unset($_POST);
         return view('login');
     }
     function registro()
     {
         return view('registro');
+    }
+    function logout()
+    {
+        unset($_POST);
+        return redirect('/');
     }
 }

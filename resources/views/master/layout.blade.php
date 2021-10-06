@@ -50,19 +50,24 @@
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">DressCalc</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" target="__blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" target="__blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" target="__blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" target="__blank" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" target="__blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="/" class="nav-link scrollto @yield('home')"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="/login" class="nav-link scrollto @yield('login')"><i class="bx bx-user"></i> <span>Login</span></a></li>
-          <li><a href="/registro" class="nav-link scrollto @yield('registro')"><i class="bx bx-user"></i> <span>Registro</span></a></li>
+          <li><a href="/main" class="nav-link scrollto @yield('main')"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Capacítate</span></a></li>
+          <li><a href="/balance" class="nav-link scrollto @yield('balance')"><i class="bx bx-glasses-alt"></i> <span>Mis balances</span></a></li>
+          <li><a href="/earn" class="nav-link scrollto @yield('earn')"><i class="bx bx-money"></i> <span>Mis ganancias</span></a></li>
+          <li><a href="/inventory" class="nav-link scrollto @yield('inventory')"><i class="bx bx-folder"></i> <span>Inventario</span></a></li>
+          <li><a href="/calc" class="nav-link scrollto @yield('calc')"><i class="bx bx-calculator"></i> <span>Precio de Venta</span></a></li>
+          <li><a href="/contact" class="nav-link scrollto @yield('contact')"><i class="bx bx-group"></i> <span>Contacto</span></a></li>
+          <li><a href="/logout" class="nav-link scrollto"><i class="bx bx-user-x"></i> <span>Cerrar Sesión</span></a></li>
           <!--
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
@@ -75,12 +80,17 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container">
 
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      @yield('content')
-    </div>
-  </section><!-- End Hero -->
+        @yield('content')
+
+      </div>
+    </section><!-- End About Section -->
+  </main>
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
