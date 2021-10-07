@@ -1,11 +1,5 @@
-@extends('master.layout')
-@section('title')
-DressCalc
-@endsection
-@section('inventory')
-active
-@endsection
-@section('content')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
 <div class="panel panel-primary" style="background: white;">
 	<div class="panel-heading"><h3>&nbsp;</h3></div>
 	<div class="panel-body">
@@ -16,16 +10,22 @@ active
 				        <thead>
 				            <tr>
 				                <th>Código</th>
-				                <th>Prendas</th>
-				                <th>Stock</th>
+				                <th>Tipo</th>
+				                <th>Prenda</th>
+				                <th>Precio</th>
+				                <th>Cliente</th>
+				                <th>Fecha</th>
 				            </tr>
 				        </thead>
 				        <tbody>
-							@foreach ($stock as $value)
+							@foreach ($ventas as $value)
 								<tr>
 					                <td>{{ $value->id }}</td>
-					                <td>{{ $value->description }}</td>
+					                <td>{{ $value->tipo }}</td>
+					                <td>{{ $value->prenda }}</td>
 					                <td>{{ $value->value }}</td>
+					                <td>{{ $value->cliente }}</td>
+					                <td>{{ $value->created_at }}</td>
 					            </tr>
 							@endforeach
 				        </tbody>
@@ -44,16 +44,22 @@ active
 		</div>
 	</div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
 <script>
 	$(document).ready(function() {
 	    $('#tblInventario').dataTable({
-			buttons: [
-		        'pdf',
-		    ],
+dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
 	    	pageLenght: 10,
 	    	filter: true,
 	        searching: true,
@@ -72,4 +78,3 @@ active
 	    });
 	});
 </script>
-@endsection

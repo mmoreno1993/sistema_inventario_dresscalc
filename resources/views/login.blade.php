@@ -20,6 +20,13 @@ active
 				<label for="exampleInputPassword1">Contraseña</label>
 				<input name="txtPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 			</div>
+			@if ($error === true)
+				<div class="form-group">
+					<div class="alert alert-danger" role="alert">
+						Usuario y contraseña incorrectos
+					</div>
+				</div>
+			@endif
 			<div style="text-align: center;">
 				<button type="submit" class="btn btn-primary">Ingresar</button>  		
 			</div>
