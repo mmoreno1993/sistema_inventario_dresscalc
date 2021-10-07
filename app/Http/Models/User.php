@@ -17,7 +17,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @var array
      */
-    protected $table = 'dresscalc.users';
+    protected $table = 'users';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $casts = [

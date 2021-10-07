@@ -17,7 +17,7 @@ class TypeClothe extends Model implements AuthenticatableContract, AuthorizableC
      *
      * @var array
      */
-    protected $table = 'dresscalc.types_clothes';
+    protected $table = 'types_clothes';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $casts = [

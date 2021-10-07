@@ -17,7 +17,7 @@ class Stock extends Model implements AuthenticatableContract, AuthorizableContra
      *
      * @var array
      */
-    protected $table = 'dresscalc.stock';
+    protected $table = 'stock';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $casts = [

@@ -17,7 +17,7 @@ class Clothe extends Model implements AuthenticatableContract, AuthorizableContr
      *
      * @var array
      */
-    protected $table = 'dresscalc.clothes';
+    protected $table = 'clothes';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $casts = [
